@@ -1,0 +1,35 @@
+const express = require("express");
+const app = express();
+const PORT = 5000;
+app.get("/api", async (req, res) => {
+  const { slack_name, track } = req.query;
+  const github_file_url = "";
+  const github_repo_url = "";
+  const status_code = 200;
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const date = new Date();
+  const current_day = days[date.getDay()];
+  const utc_time = date;
+  data = {
+    slack_name,
+    current_day,
+    utc_time,
+    track,
+    github_file_url,
+    github_repo_url,
+    status_code,
+  };
+  res.status(200).json(data);
+});
+
+app.listen(PORT, () => {
+  console.log(`Backend server is running on port ${PORT}`);
+});
