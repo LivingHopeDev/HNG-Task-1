@@ -3,8 +3,9 @@ const app = express();
 const PORT = 5000;
 app.get("/api", async (req, res) => {
   const { slack_name, track } = req.query;
-  const github_file_url = "";
-  const github_repo_url = "";
+  const github_file_url =
+    "https://github.com/LivingHopeDev/HNG-Task-1/blob/main/app.js";
+  const github_repo_url = "https://github.com/LivingHopeDev/HNG-Task-1";
   const status_code = 200;
   const days = [
     "Sunday",
