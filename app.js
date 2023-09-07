@@ -18,7 +18,7 @@ app.get("/api", async (req, res) => {
   ];
   const date = new Date();
   const current_day = days[date.getDay()];
-  const utc_time = date;
+  const utc_time = date.toISOString().slice(0, -5) + "Z";
   data = {
     slack_name,
     current_day,
